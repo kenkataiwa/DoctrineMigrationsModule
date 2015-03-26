@@ -12,7 +12,7 @@ Installation of this module uses composer. For composer documentation, please re
 [getcomposer.org](http://getcomposer.org/).
 
 ```sh
-$ composer require kenkataiwa/doctrine-fixture-module
+$ composer require kenkataiwa/doctrine-migrations-module
 ```
 
 Then open `config/application.config.php` and add `DoctrineModule`, `DoctrineORMModule` and 
@@ -34,7 +34,6 @@ return array(
         ),
     ),
     ...
-);
 );
 ```
 
