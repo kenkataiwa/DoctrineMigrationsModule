@@ -20,16 +20,18 @@
     }
   ],
   "require": {
-    "php": ">=5.3.3",
-    "zendframework/zend-modulemanager": "2.*",
-    "zendframework/zend-eventmanager": "2.*",
-    "zendframework/zend-servicemanager": "2.*",
-    "doctrine/doctrine-orm-module": "0.*",
-    "doctrine/migrations": "1.*"
+    "php":                               "^5.6 || ^7.0",
+    "doctrine/doctrine-module":          "^1.2",
+    "symfony/console":                   "^2.3 || ^3.0",
+    "zendframework/zend-stdlib":         "^2.7.7 || ^3.0.1",
+    "zendframework/zend-hydrator":       "^1.1 || ^2.2.1",
+    "zendframework/zend-mvc":            "^2.7.10 || ^3.0.1",
+    "zendframework/zend-servicemanager": "^2.7.6 || ^3.1",
+    "doctrine/doctrine-orm-module":      "^1",
+    "doctrine/migrations": "^1"
   },
   "require-dev": {
-    "phpunit/phpunit": "3.7.*",
-    "murganikolay/doctrine-migrations-module": "dev-master",
+    "zendframework/zend-test": "^3",
     "doctrine/doctrine-migrations-bundle": "dev-master"
   },
   "autoload": {
@@ -40,6 +42,9 @@
   "extra": {
     "branch-alias": {
       "dev-master": "0.1.x-dev"
+    },
+    "zf": {
+      "component": "DoctrineMigrationsModule"
     }
   }
 }

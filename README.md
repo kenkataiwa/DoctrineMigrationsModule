@@ -1,9 +1,13 @@
-# Doctrine Migrations Module for Zend Framework 2
+# Doctrine Migrations Module for Zend Framework
+[![Build Status](https://travis-ci.org/kenkataiwa/DoctrineMigrationsModule.png)](https://travis-ci.org/kenkataiwa/DoctrineMigrationsModule)
+[![Code Coverage](https://scrutinizer-ci.com/g/kenkataiwa/DoctrineMigrationsModule/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/kenkataiwa/DoctrineMigrationsModule/)
+[![Latest Stable Version](https://poser.pugx.org/kenkataiwa/doctrine-migrations-module/v/stable.png)](https://packagist.org/packages/kenkataiwa/doctrine-migrations-module)
+[![Latest Unstable Version](https://poser.pugx.org/kenkataiwa/doctrine-migrations-module/v/unstable.png)](https://packagist.org/packages/kenkataiwa/doctrine-migrations-module)
 
 ## Introduction
 
-This module integrates the [Doctrine Migrations library](https://github.com/doctrine/data-migrations).
-into Zend Framework 2 so that you can load data fixtures programmatically into the Doctrine ORM or ODM.
+This module integrates the [Doctrine Migrations library](https://github.com/doctrine/migrations).
+into Zend Framework so that you can load data fixtures programmatically into the Doctrine ORM or ODM.
 
 
 ## Installation
