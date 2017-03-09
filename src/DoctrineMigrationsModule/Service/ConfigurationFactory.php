@@ -2,33 +2,28 @@
 
 namespace DoctrineMigrationsModule\Service;
 
+use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 use DoctrineMigrationsModule\Migrations\Configuration;
 
 class ConfigurationFactory implements FactoryInterface
 {
-
-    /**
-     * Create service
-     *
-     * @param ServiceLocatorInterface $serviceLocator
-     * @return mixed
-     */
-    public function createService(ServiceLocatorInterface $serviceLocator)
+    public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $config = $serviceLocator->get('Config');
+        // Get config.
+        $config = $container->get('configuration');
         $config = $config['doctrine']['migrations'];
 
-        if (isset($config['connection']) && $serviceLocator->has($config['connection'])) {
-            $connection = $serviceLocator->get($config['connection']);
+        if (isset($config['connection']) && $container->has($config['connection'])) {
+            $connection = $container->get($config['connection']);
         } else {
-            $connection = $serviceLocator->get('doctrine.connection.orm_default');
+            $connection = $container->get('doctrine.connection.orm_default');
         }
         unset($config['connection']);
 
-        if (isset($config['output_writer']) && $serviceLocator->has($config['output_writer'])) {
-            $outputWriter = $serviceLocator->get($config['output_writer']);
+        if (isset($config['output_writer']) && $container->has($config['output_writer'])) {
+            $outputWriter = $container->get($config['output_writer']);
         } else {
             $outputWriter = null;
         }
@@ -45,5 +40,17 @@ class ConfigurationFactory implements FactoryInterface
         }
 
         return $configuration;
+    }
+
+    /**
+     * Create service
+     *
+     * @param ServiceLocatorInterface $serviceLocator
+     * @return mixed
+     */
+    public function createService(ServiceLocatorInterface $serviceLocator)
+    {
+        $config = $serviceLocator->get('configuration');
+
     }
 }
